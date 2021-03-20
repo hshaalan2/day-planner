@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <div class="container text-center">
+        <h1 class="display-2">Work Day Scheduler</h1>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <p id="currentDay" class="lead" style="background-color: bisque;font-size:xx-large;"></p>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-md-2">
+          <ul class="list-group">
+            <h4>Legend</h4> 
+            <li class="list-group-item list-group-item-success legend">Free</li>
+            <li class="list-group-item list-group-item-danger legend">Busy</li>
+          </ul>
+
+
+        </div>
+        <div class="col-md-8">
+          <!--possibly create an empty daily calendar view with the boostrap styles below from https://getbootstrap.com/docs/4.4/components/list-group/ and then use jquery to populte a certain hour of the day by replacing the ul in question and assigning it the properl class to give the require color e.g. green for free, red for busy , grey for availalbe-->
+          <div class="list-group">
+            <h4>Events</h4>
+          <ul class="list-group">        
+            <li class="list-group-item list-group-item-success" id="9am">9:00am           <span id="span-9am"></span>              <span>              <button class="btn" id="delete" style="float: right;";><i class="fa fa-trash"></i></button></span>              
+              <form id="input-form">
+              <input type="text" class="form-input w-100" id="event-input1" name="event-input" placeholder=""/>
+
+              <!--Category buttons expirement -->
+              <!-- <input type="radio" id="business1" name="category" value="business" >
+              <label for="business" id="business11" >Business</label>
+              <input type="radio" id="family1" name="category" value="family" >
+              <label for="family" id="family11" >Family</label>
+              <input type="radio" id="personal1" name="category" value="personal" >
+              <label for="personal" id="personal11" >Personal</label> -->
+            </form> 
+            </li>
+
+            <li class="list-group-item list-group-item-success" id="10am">10:00am        <span id="span-10am"></span>
+              <span>              <button class="btn" id="delete2" style="float: right;";><i class="fa fa-trash"></i></button></span>
+              <form id="input-form2">
+                <input type="text" class="form-input w-100" id="event-input2" name="event-input" placeholder=""/>
+
+                
+              </form> 
+            </li>
+
+
+            <li class="list-group-item list-group-item-success" id="11am">11:00am         <span id="span-11am"></span>              
+              <span>              <button class="btn" id="delete3" style="float: right;";><i class="fa fa-trash"></i></button></span><form id="input-form3">
+              <input type="text" class="form-input w-100" id="event-input3" name="event-input" placeholder=""/>
+              <!-- <button class="btn" id="delete3" style="float: right;";><i class="fa fa-trash"></i></button> -->
+            </form> </li>
+
+            <li class="list-group-item list-group-item-success" id="12pm">12:00pm         <span id="span-12pm"></span>              
+              <span>              <button class="btn" id="delete4" style="float: right;";><i class="fa fa-trash"></i></button></span>
+              <form id="input-form4">
+              <input type="text" class="form-input w-100" id="event-input4" name="event-input" placeholder=""/>
+            </form> </li>
+ 
+              <li class="list-group-item list-group-item-success" id="1pm" >1:00pm          <span id="span-1pm"></span>
+                <span>              <button class="btn" id="delete5" style="float: right;";><i class="fa fa-trash"></i></button></span>
+              <form id="input-form5">
+                <input type="text" class="form-input w-100" id="event-input5" name="event-input" placeholder=""/>
+              </form> </li>
+
+            <li class="list-group-item list-group-item-success" id="2pm">2:00pm            <span id="span-2pm"></span>  <span>              <button class="btn" id="delete6" style="float: right;";><i class="fa fa-trash"></i></button></span>            <form id="input-form6">
+
+              <input type="text" class="form-input w-100" id="event-input6" name="event-input" placeholder=""/>
+            </form> </li>
+            <li class="list-group-item list-group-item-success" id="3pm">3:00pm           <span id="span-3pm"></span>
+              <span>              <button class="btn" id="delete7" style="float: right;";><i class="fa fa-trash"></i></button></span>              <form id="input-form7">
+              <input type="text" class="form-input w-100" id="event-input7" name="event-input" placeholder=""/>
+            </form> </li>
+
+            <li class="list-group-item list-group-item-success" id="4pm">4:00pm             <span id="span-4pm"></span>              
+              <span>              <button class="btn" id="delete8" style="float: right;";><i class="fa fa-trash"></i></button></span>
+              <form id="input-form8">
+              <input type="text" class="form-input w-100" id="event-input8" name="event-input" placeholder=""/>
+            </form> </li>
+
+            <li class="list-group-item list-group-item-success" id="5pm">5:00pm            <span id="span-5pm"></span>              
+              <span>              <button class="btn" id="delete9" style="float: right;";><i class="fa fa-trash"></i></button></span>
+              <form id="input-form9">
+              <input type="text" class="form-input w-100" id="event-input9" name="event-input" placeholder=""/>
+            </form> </li>
+
+          </ul> 
+        </div>
+        
+
+        </div>
+        <div class="col-md-2">
+          <ul class="list-group">
+            <!-- <h4>Legend</h4>  -->
+            <!-- <li class="list-group-item list-group-item-light legend">Free</li>
+            <li class="list-group-item list-group-item-light legend">Busy</li>
+            <li class="list-group-item list-group-item-light legend">Free</li>
+            <li class="list-group-item list-group-item-light legend">Busy</li>
+            <li class="list-group-item list-group-item-light legend">Free</li>
+            <li class="list-group-item list-group-item-light legend">Busy</li>
+            <li class="list-group-item list-group-item-light legend">Free</li>
+            <li class="list-group-item list-group-item-light legend">Busy</li>
+            <li class="list-group-item list-group-item-light legend">Free</li>
+          </ul> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+  </body>
+</html>
